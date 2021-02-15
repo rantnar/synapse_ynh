@@ -107,6 +107,9 @@ set_certificat_access() {
 	set_access turnserver /etc/yunohost/certs/$domain/crt.pem
 	set_access turnserver /etc/yunohost/certs/$domain/key.pem
 	set_access turnserver /etc/yunohost/certs/$domain/dh.pem
+	adduser $synapse_user ssl-cert
+	adduser turnserver ssl-cert
+
 }
 
 set_access() { # example : set_access USER FILE
