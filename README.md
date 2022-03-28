@@ -155,6 +155,14 @@ The following command will grant admin privilege to the specified user:
 su --command="psql matrix_synapse" postgres <<< "UPDATE users SET admin = 1 WHERE name = '@user_to_be_admin:domain.tld'"
 ```
 
+### Administration API
+
+Synapse's administration API endpoints are under `/_synapse` path and protected with the `admin_api` permission.
+By default, no one has access to this path.
+
+If you wish to access it, for example to use [Synapse Admin](https://github.com/YunoHost-Apps/synapse-admin_ynh),
+you need to give this permission to visitors.
+
 ### Upgrade
 
 By default a backup is made before the upgrade. To avoid this you have theses following possibilites:
